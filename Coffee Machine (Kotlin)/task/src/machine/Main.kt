@@ -1,15 +1,14 @@
 package machine
 
-fun main() {
-    // global variables
+class CoffeeMachine () {
+    // properties representing initial inventory
     var currentWater = 400
     var currentMilk = 540
     var currentBeans = 120
     var currentCups = 9
     var money = 550
 
-
-    // function to display current supplies
+    // method to display current supplies
     fun displayContents() {
         println("The coffee machine has:")
         println("$currentWater ml of water")
@@ -18,7 +17,8 @@ fun main() {
         println("$currentCups disposable cups")
         println("\$$money of money")
     }
-    // function to see if enough supplies to make a cup or print supplies missing
+
+    // method to see if enough supplies to make a cup or print supplies missing
     fun canBuy(water: Int = 0, milk: Int = 0, beans: Int = 0, cups: Int = 1): Boolean {
         var missing = "Sorry, not enough"
         var canMake = true
@@ -42,6 +42,13 @@ fun main() {
         else { println("$missing!") }
         return canMake
     }
+
+
+}
+
+fun main() {
+
+
 
 
     // function to buy espresso
