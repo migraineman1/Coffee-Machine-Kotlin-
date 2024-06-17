@@ -19,6 +19,17 @@
             <option value="$PROJECT_DIR$/Coffee Machine (Kotlin)/task/build/reports/tests" />
             <option value="$PROJECT_DIR$/Coffee Machine (Kotlin)/task/build/test-results" />
             <option value="$PROJECT_DIR$/Coffee Machine (Kotlin)/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Almost val variables" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Calculating the cube of a user-specified integer" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Correct the error in the code" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Creating a constant" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Creating a dynamic greeting message" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Creating and printing a double value of an integer input" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Creating immutable variables for user details display" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/What is the error" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/What is the result" />
+            <option value="$PROJECT_DIR$/Topics/Constants and val variables/Why does the code work" />
             <option value="$PROJECT_DIR$/Topics/Ranges/At least one" />
             <option value="$PROJECT_DIR$/Topics/Ranges/Between two numbers" />
             <option value="$PROJECT_DIR$/Topics/Ranges/Check if a number falls within a specific range" />
@@ -35,6 +46,19 @@
             <option value="$PROJECT_DIR$/Topics/Ranges/Theory" />
             <option value="$PROJECT_DIR$/Topics/Ranges/Within both ranges" />
             <option value="$PROJECT_DIR$/Topics/Ranges/Working hours" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Amount on the account" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Correct the code" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Create a program introducing yourself as 'John', aged '21'" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Displaying two specific phrases on separate lines" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/From 0 to 9" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Personalized greeting with name and age" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Print the square of a given number" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Printing texts" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/Tic-Tac-Toe" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/We need to learn Kotlin" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/What does the code print" />
+            <option value="$PROJECT_DIR$/Topics/Standard output/What does the program print" />
             <option value="$PROJECT_DIR$/util" />
           </set>
         </option>

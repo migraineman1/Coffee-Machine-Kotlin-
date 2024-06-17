@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Ranges-Checking_if_a_number_is_within_a_certain_range" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Ranges/Checking if a number is within a certain range" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Coffee Machine (Kotlin)" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Ranges/Checking if a number is within a certain range">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Ranges/Checking if a number is within a certain range/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Ranges/Checking if a number is within a certain range/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Ranges/Checking if a number is within a certain range/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
