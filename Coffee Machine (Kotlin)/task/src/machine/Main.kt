@@ -2,14 +2,14 @@ package machine
 
 class CoffeeMachine () {
     // properties representing initial inventory
-    var currentWater = 400
-    var currentMilk = 540
-    var currentBeans = 120
-    var currentCups = 9
-    var money = 550
+    private var currentWater = 400
+    private var currentMilk = 540
+    private var currentBeans = 120
+    private var currentCups = 9
+    private var money = 550
 
     // method to display current supplies
-    fun displayContents() {
+    private fun displayContents() {
         println("The coffee machine has:")
         println("$currentWater ml of water")
         println("$currentMilk ml of milk")
@@ -19,7 +19,7 @@ class CoffeeMachine () {
     }
 
     // method to see if enough supplies to make a cup or print supplies missing
-    fun canBuy(water: Int = 0, milk: Int = 0, beans: Int = 0, cups: Int = 1): Boolean {
+    private fun canBuy(water: Int = 0, milk: Int = 0, beans: Int = 0, cups: Int = 1): Boolean {
         var missing = "Sorry, not enough"
         var canMake = true
         if (water > currentWater) {
@@ -43,16 +43,8 @@ class CoffeeMachine () {
         return canMake
     }
 
-
-}
-
-fun main() {
-
-
-
-
     // function to buy espresso
-    fun buyEspresso() {
+    private fun buyEspresso() {
         if (canBuy(250, 0, 16, 1)) {
             currentWater -= 250
             currentBeans -= 16
@@ -62,7 +54,7 @@ fun main() {
     }
 
     // function to buy latte
-    fun buyLatte() {
+    private fun buyLatte() {
         if (canBuy(350, 75, 20, 1)) {
             currentWater -= 350
             currentMilk -= 75
@@ -73,7 +65,7 @@ fun main() {
     }
 
     // function to buy espresso
-    fun buyCappuccino() {
+    private fun buyCappuccino() {
         if (canBuy(200, 100, 12, 1)) {
             currentWater -= 200
             currentMilk -= 100
@@ -83,60 +75,90 @@ fun main() {
         }
     }
 
+    // function to refill the machine with supplies
+    private fun fillMachine(water: Int, milk: Int, beans: Int, cups: Int) {
 
+        currentWater += water
+        currentMilk += milk
+        currentBeans += beans
+        currentCups += cups
+    }
+
+    // function to empty money from the machine
+    private fun emptyMoney() {
+        println("I gave you \$$money")
+        money = 0
+    }
+
+    // method to receive instructions from the user
+    fun instruction (instruction: String) {
+        if (instruction == "emptyMoney") {
+            emptyMoney()
+            return
+        }
+
+        if (instruction == "displayContents") {
+            displayContents()
+            return
+        }
+
+        val command = instruction.split(" ")
+        if (command[0] == "buy"){
+            when (command[1]) {
+                "Espresso" -> buyEspresso()
+                "Latte" -> buyLatte()
+                "Cappuccino" -> buyCappuccino()
+            }
+        }
+
+        if (command[0] == "fill") {
+            fillMachine(command[1].toInt(), command[2].toInt(), command[3].toInt(), command[4].toInt())
+        }
+
+    }
+
+}
+
+
+
+fun main() {
+
+    val coffeeMachine = CoffeeMachine()
 
     // function to buy some coffee
     fun buyCoffee() {
         // prompt for type of coffee desired
         println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:")
+        val coffeeType = readln()
 
-        // read in purchase option
-        val options = readln()
-        if (options == "back") return
-        val coffeeType = options.toInt()
         when (coffeeType) {
-            1 -> buyEspresso()
-            2 -> buyLatte()
-            3 -> buyCappuccino()
+            "1" -> coffeeMachine.instruction("buy Espresso")
+            "2" -> coffeeMachine.instruction("buy Latte")
+            "3" -> coffeeMachine.instruction("buy Cappuccino")
+            "back" -> return
         }
-
     }
 
     // function to refill the machine with supplies
     fun fillMachine() {
 
         println("Write how many ml of water you want to add:")
-        var input = readln().toInt()
-        currentWater += input
+        val water = readln().toInt()
 
         println("Write how many ml of milk you want to add:")
-        input = readln().toInt()
-        currentMilk += input
+        val milk = readln().toInt()
 
         println("Write how many grams of coffee beans you want to add:")
-        input = readln().toInt()
-        currentBeans += input
+        val beans = readln().toInt()
 
         println("Write how many disposable cups you want to add:")
-        input = readln().toInt()
-        currentCups += input
+        val cups = readln().toInt()
+
+        coffeeMachine.instruction("fill $water $milk $beans $cups")
     }
 
-    // function to empty money from the machine
-    fun emptyMoney() {
-        println("I gave you \$$money")
-        money = 0
-    }
-
-    // list initial supplies
-    currentWater = 400
-    currentMilk = 540
-    currentBeans = 120
-    currentCups = 9
-    money = 550
-
+    // main loop of program
     do {
-
 
         // prompt for initial function input
         println("Write action (buy, fill, take, remaining, exit):")
@@ -146,9 +168,11 @@ fun main() {
         when (option) {
             "buy"       -> buyCoffee()
             "fill"      -> fillMachine()
-            "take"      -> emptyMoney()
-            "remaining" -> displayContents()
+            "take"      -> coffeeMachine.instruction("emptyMoney")
+            "remaining" -> coffeeMachine.instruction("displayContents")
         }
     } while (option != "exit")
 
 }
+
+
